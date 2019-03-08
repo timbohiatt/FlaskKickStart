@@ -104,7 +104,7 @@ services:
     hostname: ${APP_NAME}_CELERY_WORKER
     command: celery worker -A run_celery --loglevel=${CELERY_LOG_LEVEL}
     env_file:
-      - ./dev.env
+      - ./.env
     environment:
       #- DEBUG=1
       - FLASK_CONFIG=${APP_CONFIG}
@@ -146,6 +146,8 @@ services:
         - GIT_REPO_NAME=${GIT_REPO_NAME}
     hostname: ${APP_NAME}_WEB
     #command: 
+    env_file:
+      - ./.env
     environment:
       #- DEBUG=${FLASK_DEBUG}
       - FLASK_CONFIG=${APP_CONFIG}
@@ -166,7 +168,7 @@ services:
     expose:
       # Opens port 5000 on the container
       - '${FLASK_EXPOSE_PORT}'
-    entrypoint: "./web_boot.sh"
+    entrypoint: "./web/web_boot.sh"
 
 
 
