@@ -1,0 +1,42 @@
+
+<!-- app/templates/home/index.html -->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+<main role="main" class="container">
+	
+  <div class="jumbotron">
+    <h1>Welcome to the Tim's Base Web App</h1>
+    <p>The whole purpose of thi Docker Compose Image was to get you going with a Web App Quickly! Hopefully, all going well you should have the following:</p>
+    <ul>
+      <li>[FLASK] Base Flask Web Application</li>
+      <ul>
+        <li>Implements Flask</li>
+        <li>Implements Blueprint Factory (Default with Home & Admin Blueprints</li>
+        <li>SQL Alchemy Backend Connected to MySQL Container from Docker Compose</li>
+        <li>Celery Background Tasks With an Example in the Home/Views Module</li>
+        <li>Bootstrap CSS and Framework for Quick Formatting of your Site</li>
+      </ul>
+      <li>[MYSQL] MySQL Container</li>
+      <ul>
+        <li>MySQL Running in Container with link to Flask App through SQL Alchemy</li>
+      </ul>
+      <li>[CELERY] Celery Container</li>
+      <ul>
+        <li>Celery Container Linked to the Flask Web App, Ready to use through the Rabbit MQ Broker</li>
+      </ul>     
+      <li>[RABBIT-MQ] Rabbit-MQ Container</li>
+      <ul>
+        <li>Rabbit-MQ Message Broker configured to listen to messages between Flask Web App and the Celery Broker</li>
+      </ul>    
+    </ul>
+
+    <p>Really hope you find this a helpful way to get going with your web application within a container application.</p>
+    
+  </div>
+
+</main>
+
+{% endblock %}
