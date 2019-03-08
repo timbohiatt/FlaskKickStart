@@ -1,3 +1,7 @@
+FROM python:2.7-slim
+MAINTAINER Tim Hiatt <timbohiatt@gmail.com>
+
+
 
 #=========================================================================================
 # Base Flask Docker Image for Basic Web App Quick Start
@@ -18,13 +22,6 @@
 #	${GIT_REPO_NAME} 	= This is the repoitory name
 #
 #=========================================================================================
-
-
-#=========================================================================================
-FROM python:2.7-slim
-MAINTAINER Tim Hiatt <timbohiatt@gmail.com>
-#=========================================================================================
-
 
 #Update and Download APT-GET Package Contents including Git
 #=========================================================================================
