@@ -93,6 +93,13 @@ services:
 #=========================================================================================
   celery_worker:
     build: ./web
+      args:
+        - APP_NAME=${APP_NAME}
+        - APP_CODE_BRANCH=${APP_CODE_BRANCH}
+        - GIT_ACCESS_TOKEN=${GIT_ACCESS_TOKEN}
+        - GIT_USERNAME=${GIT_USERNAME}
+        - GIT_REPO_NAME=${GIT_REPO_NAME}
+
     hostname: ${APP_NAME}_CELERY_WORKER
     command: celery worker -A run_celery --loglevel=${CELERY_LOG_LEVEL}
     environment:
@@ -127,6 +134,12 @@ services:
 #=========================================================================================
   flask_web:
     build: ./web
+      args:
+        - APP_NAME=${APP_NAME}
+        - APP_CODE_BRANCH=${APP_CODE_BRANCH}
+        - GIT_ACCESS_TOKEN=${GIT_ACCESS_TOKEN}
+        - GIT_USERNAME=${GIT_USERNAME}
+        - GIT_REPO_NAME=${GIT_REPO_NAME}
     hostname: ${APP_NAME}_WEB
     #command: 
     environment:
