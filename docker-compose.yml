@@ -92,7 +92,8 @@ services:
 #
 #=========================================================================================
   celery_worker:
-    build: ./web
+    build: 
+      context: ./web
       args:
         - APP_NAME=${APP_NAME}
         - APP_CODE_BRANCH=${APP_CODE_BRANCH}
@@ -133,7 +134,8 @@ services:
 #
 #=========================================================================================
   flask_web:
-    build: ./web
+    build: 
+      context: ./web
       args:
         - APP_NAME=${APP_NAME}
         - APP_CODE_BRANCH=${APP_CODE_BRANCH}
