@@ -55,10 +55,11 @@ services:
       # Password for root access
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASS}
     ports:
-      - ${MYSQL_EXPOSE_PORT}:${MYSQL_PORT}
+      #- "${MYSQL_EXPOSE_PORT}:${MYSQL_PORT}"
+      - "7306:3306"
     expose:
       # Opens port 3306 on the container
-      - ${MYSQL_EXPOSE_PORT}
+      - "${MYSQL_EXPOSE_PORT}"
     volumes:
       - .:/${APP_NAME}/mysql/data
 
@@ -78,7 +79,7 @@ services:
     volumes:
       - '.:/maersk/rabbitmq/data'
     ports:
-      - ${RABBITMQ_EXPOSE_PORT}:3306
+      - "${RABBITMQ_EXPOSE_PORT}:3306"
 
 
 
@@ -127,7 +128,7 @@ services:
   flask_web:
     build: ./web
     hostname: ${APP_NAME}_WEB
-    command:
+    #command: 
     environment:
       #- DEBUG=${FLASK_DEBUG}
       - FLASK_CONFIG=${APP_CONFIG}
