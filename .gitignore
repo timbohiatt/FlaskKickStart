@@ -49,3 +49,4 @@ env
 instance/*
 #Specific Items to Ignore
 .env
+*.env

@@ -1,6 +1,18 @@
 FROM python:2.7-slim
 MAINTAINER Tim Hiatt <timbohiatt@gmail.com>
 
+ARG APP_NAME
+ARG APP_CODE_BRANCH
+ARG GIT_USERNAME
+ARG GIT_ACCESS_TOKEN
+ARG GIT_REPO_NAME
+
+ENV APP_NAME=$APP_NAME
+ENV APP_CODE_BRANCH=$APP_CODE_BRANCH
+ENV GIT_USERNAME=$GIT_USERNAME
+ENV GIT_ACCESS_TOKEN=$GIT_ACCESS_TOKEN
+ENV GIT_REPO_NAME=$GIT_REPO_NAME
+
 
 
 #=========================================================================================
