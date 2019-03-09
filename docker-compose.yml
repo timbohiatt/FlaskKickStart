@@ -44,7 +44,7 @@ services:
 #
 #=========================================================================================
   mysql:
-    image: mysql:latest
+    image: mysql:5.7
     hostname: ${APP_NAME}_MYSQL
     environment:
       MYSQL_DATABASE: ${APP_NAME}_db
