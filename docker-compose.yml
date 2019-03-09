@@ -102,7 +102,7 @@ services:
         - GIT_REPO_NAME=${GIT_REPO_NAME}
 
     hostname: ${APP_NAME}_CELERY_WORKER
-    command: celery worker -A run_celery --loglevel=${CELERY_LOG_LEVEL}
+    command: celery worker -A /web/run_celery --loglevel=${CELERY_LOG_LEVEL}
     env_file:
       - ./.env
     environment:
@@ -145,7 +145,7 @@ services:
         - GIT_USERNAME=${GIT_USERNAME}
         - GIT_REPO_NAME=${GIT_REPO_NAME}
     hostname: ${APP_NAME}_WEB
-    command: gunicorn -w 4 -b 0.0.0.0:5000 --access-logfile - --error-logfile - /web/run_app:app
+    command: gunicorn -w 4 -b 0.0.0.0:5000 --access-logfile - --error-logfile - web.run_app:app
     env_file:
       - ./.env
     environment:
