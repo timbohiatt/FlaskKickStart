@@ -2,6 +2,8 @@
 
 while true; do
 
+  ls
+
 	if [[ ! -d "/migrations/" ]]; then
    		echo "Not Exist"
    		flask db init
