@@ -102,7 +102,7 @@ services:
         - GIT_REPO_NAME=${GIT_REPO_NAME}
 
     hostname: ${APP_NAME}_CELERY_WORKER
-    command: celery worker -A /web/run_celery --loglevel=${CELERY_LOG_LEVEL}
+    command: celery worker -A run_celery --loglevel=${CELERY_LOG_LEVEL}
     env_file:
       - ./.env
     environment:
