@@ -145,7 +145,7 @@ services:
         - GIT_USERNAME=${GIT_USERNAME}
         - GIT_REPO_NAME=${GIT_REPO_NAME}
     hostname: ${APP_NAME}_WEB
-    command: ls web/ #gunicorn -w 4 -b 0.0.0.0:5000 --access-logfile - --error-logfile - web.run_app:app
+    command: ls #gunicorn -w 4 -b 0.0.0.0:5000 --access-logfile - --error-logfile - web.run_app:app
     env_file:
       - ./.env
     environment:

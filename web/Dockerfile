@@ -45,13 +45,13 @@ RUN apt-get update && apt-get install -y git
 
 #Using GitHub Access Token Connect to Private Repository and Download Code Branch
 #=========================================================================================
-RUN git clone -b ${APP_CODE_BRANCH} https://${GIT_ACCESS_TOKEN}:x-oauth-basic@github.com/${GIT_USERNAME}/${GIT_REPO_NAME}.git /${APP_NAME}
+#RUN git clone -b ${APP_CODE_BRANCH} https://${GIT_ACCESS_TOKEN}:x-oauth-basic@github.com/${GIT_USERNAME}/${GIT_REPO_NAME}.git /${APP_NAME}
 
 
 #Copy the Requirements File. Install all Requirements
 #=========================================================================================
-COPY requirements.txt requirements.txt
-COPY web/* *
+#COPY requirements.txt requirements.txt
+COPY . .	
 RUN pip install -r requirements.txt
-RUN ["chmod", "+x", "./web/web_boot.sh"]
+RUN ["chmod", "+x", "web_boot.sh"]
 
