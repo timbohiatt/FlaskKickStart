@@ -79,7 +79,7 @@ services:
     volumes:
       - '.:/maersk/rabbitmq/data'
     ports:
-      - "${RABBITMQ_EXPOSE_PORT}:3306"
+      - "${RABBITMQ_EXPOSE_PORT}:5672"
 
 
 
