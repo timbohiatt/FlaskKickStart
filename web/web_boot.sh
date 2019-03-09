@@ -2,7 +2,7 @@
 
 while true; do
 
-  ls
+  cd web/
 
 	if [[ ! -d "/migrations/" ]]; then
    		echo "Not Exist"
