@@ -6,7 +6,9 @@ while true; do
 
 	if [[ ! -d "/migrations/" ]]; then
    		echo "Not Exist"
-      env
+      echo "FUCK YOU!!!"
+      echo "$(ls)"
+      echo  env
    		flask db init
    		flask db migrate
 	fi
