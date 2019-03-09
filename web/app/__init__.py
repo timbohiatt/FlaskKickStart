@@ -68,12 +68,6 @@ def create_app(config_name):
 	if not os.path.exists(app.config['DOWNLOAD_FOLDER']):
 		os.makedirs(app.config['DOWNLOAD_FOLDER'])
 
-	c = 0
-	while c <=100:
-		for item in app.config:
-			print item
-
-		c = c + 1
 
 	# temporary route
 	#@app.route('/')

@@ -14,8 +14,7 @@ class Config(object):
     #MYSQL Configuration
     mysql_user = os.environ['MYSQL_USER']
     mysql_pass = os.environ['MYSQL_USER_PASS']
-    #mysql_host = str(os.environ['APP_NAME']+ "_MYSQL")
-    mysql_host = "127.0.0.1"
+    mysql_host = os.environ['MYSQL_HOST']
     mysql_port = os.environ['MYSQL_PORT']
     mysql_db = os.environ['MYSQL_DB']
 
@@ -24,15 +23,6 @@ class Config(object):
     SECRET_KEY = os.environ['FLASK_SECRET']
     SQLALCHEMY_DATABASE_URI = str("mysql+pymysql://" + mysql_user + ":" + mysql_pass + "@" + mysql_host + ":" + mysql_port + "/" + mysql_db)
 
-    count = 0
-    while count <= 100:
-        print SQLALCHEMY_DATABASE_URI 
-        print mysql_user
-        print mysql_pass
-        print mysql_host
-        print mysql_port
-        print mysql_db
-        count = count + 1
 
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     UPLOAD_FOLDER  = os.path.join(SITE_ROOT, 'static', 'uploads')
