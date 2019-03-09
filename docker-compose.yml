@@ -145,7 +145,7 @@ services:
         - GIT_USERNAME=${GIT_USERNAME}
         - GIT_REPO_NAME=${GIT_REPO_NAME}
     hostname: ${APP_NAME}_WEB
-    command: sh web_boot.sh
+    command: ./web_boot.sh
     env_file:
       - ./.env
     environment:
