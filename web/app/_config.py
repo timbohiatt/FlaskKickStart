@@ -21,7 +21,7 @@ class Config(object):
 
     #FLASK Configuration
     SECRET_KEY = os.environ['FLASK_SECRET']
-    SQLALCHEMY_DATABASE_URI = str("mysql://" + mysql_user + ":" + mysql_pass + "@" + mysql_host + ":" + mysql_port + "/" + mysql_db)
+    SQLALCHEMY_DATABASE_URI = str("mysql+pymysql://" + mysql_user + ":" + mysql_pass + "@" + mysql_host + ":" + mysql_port + "/" + mysql_db)
     SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
     UPLOAD_FOLDER  = os.path.join(SITE_ROOT, 'static', 'uploads')
     DOWNLOAD_FOLDER  = os.path.join(SITE_ROOT, 'static', 'downloads')
