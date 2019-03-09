@@ -45,7 +45,7 @@ services:
 #=========================================================================================
   mysql:
     image: mysql:5.7
-    hostname: "${MYSQL_HOST}"
+    hostname: mysql
     environment:
       MYSQL_DATABASE: ${APP_NAME}_db
       # So you don't have to use root, but you can if you like
@@ -112,7 +112,7 @@ services:
       - COMPOSE_PROJECT_NAME=${APP_NAME}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_USER_PASS}
-      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
       - MYSQL_DB=${APP_NAME}_db
       - FLASK_SECRET=${FLASK_SECRET}
@@ -155,7 +155,7 @@ services:
       - COMPOSE_PROJECT_NAME=${APP_NAME}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_USER_PASS}
-      - MYSQL_HOST=${APP_NAME}_MYSQL
+      - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
       - MYSQL_DB=${APP_NAME}_db
       - FLASK_SECRET=${FLASK_SECRET}
