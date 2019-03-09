@@ -62,11 +62,11 @@ def create_app(config_name):
 
 	#Configure Application Folders
 	#Ensure Creation of Application Uploads Folder
-	if not os.path.exists(app.config[UPLOAD_FOLDER]):
-		os.makedirs(app.config[UPLOAD_FOLDER])
+	if not os.path.exists(app.config['UPLOAD_FOLDER']):
+		os.makedirs(app.config['UPLOAD_FOLDER'])
 	#Ensure Creation of Application Downloads Folder
-	if not os.path.exists(app.config[DOWNLOAD_FOLDER]):
-		os.makedirs(app.config[DOWNLOAD_FOLDER])
+	if not os.path.exists(app.config['DOWNLOAD_FOLDER']):
+		os.makedirs(app.config['DOWNLOAD_FOLDER'])
 
 	# temporary route
 	#@app.route('/')
