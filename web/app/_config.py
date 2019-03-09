@@ -14,7 +14,8 @@ class Config(object):
     #MYSQL Configuration
     mysql_user = os.environ['MYSQL_USER']
     mysql_pass = os.environ['MYSQL_USER_PASS']
-    mysql_host = str(os.environ['APP_NAME']+ "_MYSQL")
+    #mysql_host = str(os.environ['APP_NAME']+ "_MYSQL")
+    mysql_host = "127.0.0.1"
     mysql_port = os.environ['MYSQL_PORT']
     mysql_db = os.environ['MYSQL_DB']
 

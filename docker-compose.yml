@@ -59,7 +59,7 @@ services:
       - "7306:3306"
     expose:
       # Opens port 3306 on the container
-      - "${MYSQL_EXPOSE_PORT}"
+      - "7306"
     volumes:
       - .:/${APP_NAME}/mysql/data
 
@@ -79,7 +79,7 @@ services:
     volumes:
       - '.:/maersk/rabbitmq/data'
     ports:
-      - "${RABBITMQ_EXPOSE_PORT}:5672"
+      - "${RABBITMQ_EXPOSE_PORT}:3306"
 
 
 
@@ -112,7 +112,7 @@ services:
       - COMPOSE_PROJECT_NAME=${APP_NAME}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_USER_PASS}
-      - MYSQL_HOST=${APP_NAME}_MYSQL
+      - MYSQL_HOST=127.0.0.1 #${APP_NAME}_MYSQL
       - MYSQL_PORT=3306
       - MYSQL_DB=${APP_NAME}_db
       - FLASK_SECRET=${FLASK_SECRET}
