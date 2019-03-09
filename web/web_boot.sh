@@ -2,13 +2,8 @@
 
 while true; do
 
-  cd web/
-
 	if [[ ! -d "/migrations/" ]]; then
-   		echo "Not Exist"
-      echo "FUCK YOU!!!"
       echo "$(ls)"
-      echo  env
    		flask db init
    		flask db migrate
 	fi

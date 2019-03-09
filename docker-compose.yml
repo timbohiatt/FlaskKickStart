@@ -168,7 +168,7 @@ services:
     expose:
       # Opens port 5000 on the container
       - '${FLASK_EXPOSE_PORT}'
-    entrypoint: "web/web_boot.sh"
+    entrypoint: "web_boot.sh"
 
 
 

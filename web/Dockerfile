@@ -51,6 +51,7 @@ RUN git clone -b ${APP_CODE_BRANCH} https://${GIT_ACCESS_TOKEN}:x-oauth-basic@gi
 #Copy the Requirements File. Install all Requirements
 #=========================================================================================
 COPY requirements.txt requirements.txt
+COPY web/* *
 RUN pip install -r requirements.txt
 RUN ["chmod", "+x", "./web/web_boot.sh"]
 
