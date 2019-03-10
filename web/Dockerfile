@@ -4,13 +4,11 @@ MAINTAINER Tim Hiatt <timbohiatt@gmail.com>
 ARG APP_NAME
 ARG APP_CODE_BRANCH
 ARG GIT_USERNAME
-ARG GIT_ACCESS_TOKEN
 ARG GIT_REPO_NAME
 
 ENV APP_NAME=$APP_NAME
 ENV APP_CODE_BRANCH=$APP_CODE_BRANCH
 ENV GIT_USERNAME=$GIT_USERNAME
-ENV GIT_ACCESS_TOKEN=$GIT_ACCESS_TOKEN
 ENV GIT_REPO_NAME=$GIT_REPO_NAME
 
 
@@ -29,7 +27,6 @@ ENV GIT_REPO_NAME=$GIT_REPO_NAME
 #   
 #
 #   << GIT VARIABLES >>
-#   ${GIT_ACCESS_TOKEN} = This is the Access token to read private Git Repositories
 #	${GIT_USERNAME} 	= This is the Username that hosts the git repository
 #	${GIT_REPO_NAME} 	= This is the repoitory name
 #
@@ -43,14 +40,8 @@ WORKDIR $INSTALL_PATH
 RUN apt-get update && apt-get install -y git
 
 
-#Using GitHub Access Token Connect to Private Repository and Download Code Branch
-#=========================================================================================
-#RUN git clone -b ${APP_CODE_BRANCH} https://${GIT_ACCESS_TOKEN}:x-oauth-basic@github.com/${GIT_USERNAME}/${GIT_REPO_NAME}.git /${APP_NAME}
-
-
 #Copy the Requirements File. Install all Requirements
 #=========================================================================================
-#COPY requirements.txt requirements.txt
 COPY . .	
 RUN pip install -r requirements.txt
 RUN ["chmod", "+x", "web_boot.sh"]
